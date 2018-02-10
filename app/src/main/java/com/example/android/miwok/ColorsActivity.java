@@ -15,14 +15,93 @@
  */
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
 
+    private MediaPlayer audio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_colors);
+        setContentView(R.layout.word_lists);
+        final ArrayList<word> list = new ArrayList<>();
+        list.add(new word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.color_red));
+        list.add(new word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
+        list.add(new word("dusty yellow", "ṭopiisә", R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow));
+        list.add(new word("green", "chokokki", R.drawable.color_green, R.raw.color_green));
+        list.add(new word("brown", "ṭakaakki", R.drawable.color_brown, R.raw.color_brown));
+        list.add(new word("gray", "ṭopoppi", R.drawable.color_gray, R.raw.color_gray));
+        list.add(new word("black", "kululli", R.drawable.color_black, R.raw.color_black));
+        list.add(new word("white", "kelelli", R.drawable.color_white, R.raw.color_white));
+
+//        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+//        for(int index=0;index<list.size();index++){
+//            TextView temp= new TextView(this);
+//            temp.setText(list.get(index));
+//            rootView.addView(temp);
+//        }
+        WordAdapter adapter = new WordAdapter(this, list, R.color.category_colors);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                word audioWord = list.get(position);
+                audio = MediaPlayer.create(ColorsActivity.this, audioWord.getmAudioID());
+                audio.start();
+            }
+        });
     }
+
 }
+
+//package com.example.android.miwok;
+//
+//        import android.support.v7.app.AppCompatActivity;
+//        import android.os.Bundle;
+//        import android.widget.ListView;
+//
+//        import java.util.ArrayList;
+//
+//public class ColorsActivity extends AppCompatActivity {
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.word_lists);
+//
+//        // Create a list of words
+//        ArrayList<word> words = new ArrayList<Word>();
+//        words.add(new Word("red", "weṭeṭṭi"));
+//        words.add(new Word("mustard yellow", "chiwiiṭә"));
+//        words.add(new Word("dusty yellow", "ṭopiisә"));
+//        words.add(new Word("green", "chokokki"));
+//        words.add(new Word("brown", "ṭakaakki"));
+//        words.add(new Word("gray", "ṭopoppi"));
+//        words.add(new Word("black", "kululli"));
+//        words.add(new Word("white", "kelelli"));
+//
+//        // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
+//        // adapter knows how to create list items for each item in the list.
+//        WordAdapter adapter = new WordAdapter(this, words);
+//
+//        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
+//        // There should be a {@link ListView} with the view ID called list, which is declared in the
+//        // word_listss.xml layout file.
+//        ListView listView = (ListView) findViewById(R.id.list);
+//
+//        // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
+//        // {@link ListView} will display list items for each {@link Word} in the list.
+//        listView.setAdapter(adapter);
+//    }
+//}
