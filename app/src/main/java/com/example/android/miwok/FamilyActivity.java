@@ -36,12 +36,18 @@ public class FamilyActivity extends AppCompatActivity {
         list.add(new word("mother", "әṭa", R.drawable.family_mother, R.raw.family_mother));
         list.add(new word("son", "angsi", R.drawable.family_son, R.raw.family_son));
         list.add(new word("daughter", "tune", R.drawable.family_daughter, R.raw.family_daughter));
-        list.add(new word("older brother", "taachi", R.drawable.family_older_brother, R.raw.family_older_brother));
-        list.add(new word("younger brother", "chalitti", R.drawable.family_younger_brother, R.raw.family_younger_brother));
-        list.add(new word("older sister", "teṭe", R.drawable.family_older_sister, R.raw.family_older_sister));
-        list.add(new word("younger sister", "kolliti", R.drawable.family_younger_sister, R.raw.family_younger_sister));
-        list.add(new word("grandmother ", "ama", R.drawable.family_grandmother, R.raw.family_grandmother));
-        list.add(new word("grandfather", "paapa", R.drawable.family_grandfather, R.raw.family_grandfather));
+        list.add(new word("older brother", "taachi", R.drawable.family_older_brother,
+                R.raw.family_older_brother));
+        list.add(new word("younger brother", "chalitti", R.drawable.family_younger_brother,
+                R.raw.family_younger_brother));
+        list.add(new word("older sister", "teṭe", R.drawable.family_older_sister,
+                R.raw.family_older_sister));
+        list.add(new word("younger sister", "kolliti", R.drawable.family_younger_sister,
+                R.raw.family_younger_sister));
+        list.add(new word("grandmother ", "ama", R.drawable.family_grandmother,
+                R.raw.family_grandmother));
+        list.add(new word("grandfather", "paapa", R.drawable.family_grandfather,
+                R.raw.family_grandfather));
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.

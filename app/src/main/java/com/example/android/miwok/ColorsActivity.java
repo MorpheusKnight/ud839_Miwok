@@ -33,8 +33,10 @@ public class ColorsActivity extends AppCompatActivity {
         setContentView(R.layout.word_lists);
         final ArrayList<word> list = new ArrayList<>();
         list.add(new word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.color_red));
-        list.add(new word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
-        list.add(new word("dusty yellow", "ṭopiisә", R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow));
+        list.add(new word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow,
+                R.raw.color_mustard_yellow));
+        list.add(new word("dusty yellow", "ṭopiisә", R.drawable.color_dusty_yellow,
+                R.raw.color_dusty_yellow));
         list.add(new word("green", "chokokki", R.drawable.color_green, R.raw.color_green));
         list.add(new word("brown", "ṭakaakki", R.drawable.color_brown, R.raw.color_brown));
         list.add(new word("gray", "ṭopoppi", R.drawable.color_gray, R.raw.color_gray));

@@ -27,7 +27,7 @@ public class WordAdapter extends ArrayAdapter<word> {
         // Because this is a custom adapter for two TextViews, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
         super(context, 0, list);
-        ResourceColor = mResourceColor;
+        mResourceColor = ResourceColor;
     }
 
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

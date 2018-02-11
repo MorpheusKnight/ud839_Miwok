@@ -1,8 +1,5 @@
 package com.example.android.miwok;
 
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
-
 /**
  * Created by babyj on 10/30/2017.
  */
@@ -46,11 +43,7 @@ public class word {
 
     public boolean hasImage() {
 
-        if (mImageResource == -1) {
-            return FALSE;
-        } else {
-            return TRUE;
-        }
-    }
+        return mImageResource != NO_IMAGE_PROVIDED;
 
+    }
 }
